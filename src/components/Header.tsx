@@ -49,7 +49,7 @@ export default function Header() {
       <header className={`site-header${solid ? ' is-scrolled' : ''}`}>
         <div className="container nav-wrap">
           <a className="brand" href="/" aria-label={`${site.shortName} — ${t(site.nameL)}, ${t(u.home)}`} onClick={closeAll}>
-            <img className="brand-mark" src="/assets/wfwg-logo.png" alt="" width={1254} height={1254} />
+            <img className="brand-mark" src="/assets/piec-logo.png" alt="" width={1254} height={1254} />
             <span className="brand-text">
               <b>{site.shortName}</b>
               <small lang={attr}>{lang === 'ta' ? t(site.nameL) : t(site.nameL).toUpperCase()}</small>

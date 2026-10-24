@@ -1,6 +1,6 @@
-# WFWG Next Premium — V4
+# PIEC Next Premium — V4
 
-A restrained, editorial conservation landing page for the Wildlife Federation of Western Ghats.
+A restrained, editorial conservation landing page for the People’s Initiative for Environmental Conservation.
 
 ## V4 refinement
 - Simplified the opening Western Ghats reveal to a primary ridge + subtle secondary contour.

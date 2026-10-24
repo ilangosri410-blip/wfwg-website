@@ -1,5 +1,5 @@
 /* ==========================================================================
-   WFWG — visual system
+   PIEC — visual system
    A compact, organised conservation site. One grid, three surfaces
    (paper · bone · forest-night), hairlines instead of card chrome, and depth
    held behind interaction rather than behind scrolling. Every section is an
@@ -46,7 +46,7 @@ html[lang="ta"]{--d1:clamp(32px,4.6vw,68px);--d2:clamp(25px,3vw,43px);--d2b:clam
 section{padding:var(--pad) 0}
 section[id],main[id],[id^="work-"],[id^="wildlife-"],#donate{scroll-margin-top:112px}
 .arw{display:inline-block;transition:transform var(--t1) var(--ease)}
-/* one visible focus treatment, in the WFWG green, for every interactive element */
+/* one visible focus treatment, in the PIEC green, for every interactive element */
 :is(a,button,[tabindex]):focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:2px}
 
 /* ---- labels, links, buttons -------------------------------------------- */
@@ -135,7 +135,6 @@ section[id],main[id],[id^="work-"],[id^="wildlife-"],#donate{scroll-margin-top:1
 .mnav{display:none}
 
 .intro-lock,.intro-lock body{overflow:hidden}
-.intro-seen .intro{display:none}
 
 /* ==========================================================================
    INTRO — a held title card that settles into the hero.
@@ -164,15 +163,15 @@ section[id],main[id],[id^="work-"],[id^="wildlife-"],#donate{scroll-margin-top:1
   linear-gradient(180deg,rgba(6,14,10,.6) 0%,rgba(6,14,10,.16) 28%,rgba(6,14,10,.2) 60%,rgba(6,14,10,.78) 100%)}
 .intro-id{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
   display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 24px}
-.intro-crest{width:clamp(76px,7.4vw,92px);height:auto;opacity:0;
+.intro-crest{width:clamp(112px,10vw,148px);height:auto;opacity:0;
   }
-.intro-word{margin-top:18px;font:500 clamp(27px,3.2vw,40px)/1 var(--serif);
+.intro-word{margin-top:20px;font:500 clamp(36px,4vw,54px)/1 var(--serif);
   letter-spacing:.34em;text-indent:.34em;color:#f7f3e9;opacity:0;
   }
 .intro-rule{display:block;width:clamp(52px,6vw,76px);height:1px;margin:19px 0 17px;
   background:rgba(214,196,146,.9);transform:scaleX(0);
 }
-.intro-org{font:600 clamp(9px,.95vw,10.5px)/1.7 var(--sans);letter-spacing:.22em;text-indent:.22em;
+.intro-org{max-width:760px;font:600 clamp(11px,1.1vw,14px)/1.7 var(--sans);letter-spacing:.16em;text-indent:.16em;
   color:rgba(240,234,220,.86);opacity:0;}
 .intro.is-ready .intro-crest{animation:intro-rise 900ms var(--ease) 140ms both}
 .intro.is-ready .intro-word{animation:intro-rise 900ms var(--ease) 320ms both}
@@ -191,7 +190,7 @@ section[id],main[id],[id^="work-"],[id^="wildlife-"],#donate{scroll-margin-top:1
 .hero-inner{position:relative;z-index:2}
 .hero .eyebrow{color:rgba(247,244,236,.82)}
 .hero h1{font:500 var(--d1)/1.02 var(--serif);letter-spacing:-.026em;max-width:15ch;margin:20px 0 22px;text-shadow:0 2px 26px rgba(0,0,0,.32)}
-.hero h1:lang(ta){font-size:clamp(30px,4vw,52px);line-height:1.3;letter-spacing:normal;max-width:14ch}
+.hero h1:lang(ta){font-size:clamp(34px,3.5vw,54px);line-height:1.28;letter-spacing:normal;max-width:min(900px,82vw);text-wrap:balance}
 .hero-lead{max-width:50ch;font-size:var(--lead-size);line-height:1.8;color:rgba(247,244,236,.86);margin:0}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 .hero-meta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:52px;padding-top:18px;border-top:1px solid rgba(247,244,236,.24);font:600 9.5px/1 var(--sans);letter-spacing:.18em;color:rgba(247,244,236,.66)}
@@ -634,8 +633,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sand);outline-offse
   /* ---- intro: composed for the phone frame ------------------------------ */
   .intro-frame img{object-position:50% 54%}
   .intro-id{top:47%}
-  .intro-crest{width:74px}
-  .intro-word{margin-top:15px;font-size:26px;letter-spacing:.3em;text-indent:.3em}
+  .intro-crest{width:clamp(96px,25vw,124px)}
+  .intro-word{margin-top:16px;font-size:clamp(34px,8vw,44px);letter-spacing:.3em;text-indent:.3em}
+  .intro-org{max-width:320px;font-size:10px;line-height:1.8;letter-spacing:.1em;text-indent:.1em}
   .intro-rule{width:46px;margin:16px 0 14px}
   .intro-org{font-size:8.8px;letter-spacing:.15em;text-indent:.15em;white-space:nowrap}
 
@@ -903,4 +903,94 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--sand);outline-offse
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+
+/* PIEC Tamil readability pass: preserve the English layout hierarchy while preventing
+   Tamil words from breaking mid-word or headings from inheriting Latin ch-widths. */
+html[lang="ta"] .hero h1 {
+  width: min(100%, 1040px);
+  max-width: min(100%, 1040px);
+  font-size: clamp(36px, 4.1vw, 62px);
+  line-height: 1.34;
+  letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  text-wrap: pretty;
+}
+html[lang="ta"] .hero-lead { max-width: 58ch; line-height: 1.9; }
+html[lang="ta"] :is(.about-statement, .sh .title, .cta h2, .st-feature-top h3, .cab-id h3, .story-hero h1) {
+  max-width: 100%;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  text-wrap: pretty;
+}
+html[lang="ta"] :is(p, dd, dt, figcaption, .cab-blurb, .sx-para, .story-prose p, .logo-story-text p) {
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-height: 1.9;
+}
+/* Intro identity: large enough to read clearly without changing its composition. */
+.intro-crest { width: clamp(150px, 13vw, 190px); }
+.intro-word { font-size: clamp(48px, 5vw, 68px); }
+.intro-org { max-width: min(88vw, 900px); font-size: clamp(11px, 1.05vw, 14px); line-height: 1.8; letter-spacing: .12em; text-indent: .12em; white-space: normal; text-align: center; }
+@media (max-width: 760px) {
+  .intro-crest { width: clamp(112px, 29vw, 140px); }
+  .intro-word { font-size: clamp(40px, 10vw, 52px); }
+  .intro-org { max-width: 88vw; font-size: 9px; line-height: 1.75; letter-spacing: .08em; text-indent: .08em; }
+  html[lang="ta"] .hero h1 { width: 100%; max-width: 100%; font-size: clamp(32px, 8.5vw, 44px); line-height: 1.38; }
+}
+
+
+/* PIEC crest: apply the circular, transparent treatment to the actual image
+   classes used by the header, intro, footer and logo-story hero. The PNG already
+   contains transparent corners; never paint a square tile behind it. */
+.brand-mark, .intro-crest, .footer-mark, .logo-hero-mark {
+  display: block;
+  object-fit: contain;
+  border-radius: 50%;
+  background: transparent;
+}
+
+
+/* V7 fix: keep the intro identity inside the viewport at every screen size. */
+.intro-id {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-inline: clamp(18px, 5vw, 64px);
+  gap: 0;
+}
+.intro-crest {
+  display: block;
+  flex: 0 0 auto;
+  max-width: min(42vw, 190px);
+  height: auto;
+  object-fit: contain;
+}
+.intro-word {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.intro-org {
+  display: block;
+  width: min(100%, 900px);
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  text-align: center;
+  margin-inline: auto;
+}
+@media (max-width: 760px) {
+  .intro-id { padding-inline: 20px; }
+  .intro-crest { max-width: min(38vw, 140px); }
+  .intro-org {
+    width: 100%;
+    font-size: clamp(9px, 2.5vw, 11px);
+    letter-spacing: .06em;
+    text-indent: .06em;
+    line-height: 1.65;
+  }
 }

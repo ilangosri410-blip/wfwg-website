@@ -8,7 +8,7 @@ export default function Footer() {
     <footer>
       <div className="container footgrid">
         <div>
-          <img className="footer-mark" src="/assets/wfwg-logo.png" alt="" width={1254} height={1254} loading="lazy" decoding="async" />
+          <img className="footer-mark" src="/assets/piec-logo.png" alt="" width={1254} height={1254} loading="lazy" decoding="async" />
           <div className="footbrand">{site.shortName}</div>
           <p lang={attr}>{t(site.nameL)}<br />{t(site.taglineL)}</p>
         </div>

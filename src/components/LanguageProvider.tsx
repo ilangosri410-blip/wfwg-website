@@ -15,7 +15,7 @@ type Ctx = {
 };
 
 const LanguageContext = createContext<Ctx | null>(null);
-const KEY = 'wfwg-lang';
+const KEY = 'piec-lang';
 
 // English is the default. The choice is remembered for the visit so it survives
 // navigation between the homepage and the story routes, and the document's own

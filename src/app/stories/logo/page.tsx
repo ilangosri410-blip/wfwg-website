@@ -14,7 +14,7 @@ export default function LogoStory() {
         <div className="container story-hero-inner">
           <div className="eyebrow">{t(logoStory.eyebrow)}</div>
           <div className="logo-hero-ring">
-            <img className="logo-hero-mark" src="/assets/wfwg-logo.png" alt={t(logoStory.crestAlt)} width={1254} height={1254} />
+            <img className="logo-hero-mark" src="/assets/piec-logo.png" alt={t(logoStory.crestAlt)} width={1254} height={1254} />
           </div>
           <h1>{t(logoStory.h1)}</h1>
           <p className="story-hero-lead">{t(logoStory.lead)}</p>

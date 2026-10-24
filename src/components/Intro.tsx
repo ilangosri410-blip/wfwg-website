@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 /*
-  WFWG intro — a title card, not a loading screen.
+  PIEC intro — a title card, not a loading screen.
 
   The opening frame is the hero photograph itself, graded down and held a beat
   behind the identity. When it releases, the grade lifts and the frame settles
@@ -18,7 +18,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 const HOLD = 1900;   // the frame is held while the identity settles
 const OUT = 700;     // and released into the homepage
-const KEY = 'wfwg-intro-seen';
+const KEY = 'piec-intro-seen';
 
 export default function Intro() {
   // Rendering nothing on the first client pass would flash the hero, so the
@@ -92,11 +92,11 @@ export default function Intro() {
       </div>
       <div className="intro-grade" />
       <div className="intro-id">
-        <img className="intro-crest" src="/assets/wfwg-logo.png" alt="" width={1254} height={1254}
+        <img className="intro-crest" src="/assets/piec-logo.png" alt="" width={1254} height={1254}
           fetchPriority="high" decoding="async" />
-        <div className="intro-word">WFWG</div>
+        <div className="intro-word">PIEC</div>
         <i className="intro-rule" aria-hidden="true" />
-        <div className="intro-org">WILDLIFE FEDERATION OF WESTERN GHATS</div>
+        <div className="intro-org">PEOPLE’S INITIATIVE FOR ENVIRONMENTAL CONSERVATION</div>
       </div>
     </div>
   );
